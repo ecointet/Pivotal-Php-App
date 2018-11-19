@@ -1,0 +1,11 @@
+<?php
+echo '<section id="cta" class="wrapper style3">
+<h2>HPE WONS AT BLACKJACK!!! :)</h2>';
+?>
+<br>
+<img src="images/discover.png" />
+</section>';
+?>
+<?php
+include("twitter.php");
+?>

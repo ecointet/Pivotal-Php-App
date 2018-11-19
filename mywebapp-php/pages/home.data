@@ -1,0 +1,22 @@
+<?php
+echo '<section id="cta" class="wrapper style3">
+<h2>My Application</h2>';
+?>
+<?php
+echo '<ul class="actions">
+            <li><a href="#" class="button big">'.getenv("VCAP_APP_PORT").'</a></li>
+</ul>
+</section>';
+?>
+<?php
+    $services = getenv("VCAP_SERVICES");
+    $services_json = json_decode($services,true);
+    $mysql_config = $services_json["mysql"][0]["credentials"];
+
+    // ** MySQL settings from resource descriptor ** //
+    echo "<br>ServiceName: ".$mysql_config["name"];
+    echo "<br>Login: ".$mysql_config["user"];
+    echo "<br>Password: ".$mysql_config["password"];
+    echo "<br>Host: ".$mysql_config["hostname"];
+    echo "<br>Port: ".$mysql_config["port"];
+?>
